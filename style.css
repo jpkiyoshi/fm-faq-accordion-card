@@ -1,0 +1,159 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Kumbh Sans', sans-serif;
+	padding: 20px;
+	display: grid;
+	place-content: center;
+	height: 100dvh;
+	background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+
+	--very-dark-desaturated-blue: hsl(238, 29%, 16%);
+	--soft-red: hsl(14, 88%, 65%);
+
+	--soft-violet: hsl(273, 75%, 66%);
+	--soft-blue: hsl(240, 73%, 65%);
+
+	--very-dark-grayish-blue: hsl(237, 12%, 33%);
+	--dark-grayish-blue: hsl(240, 6%, 50%);
+
+	--light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+.card-container {
+	position: relative;
+	width: 280px;
+	border-radius: 20px;
+	background-color: white;
+	box-shadow: 0px 20px 50px hsla(240deg, 50%, 20%, 0.5);
+	margin-block: 100px;
+}
+
+.img-container picture,
+.img-container img {
+	position: absolute;
+	top: -20%;
+	left: 50%;
+	transform: translateX(-50%);
+	max-width: 100%;
+	display: block;
+	width: 70%;
+	margin-inline: auto;
+}
+
+.card-content {
+	padding: 30px 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+}
+
+.card-content h1 {
+	font-size: 1.75rem;
+	font-weight: 700;
+	margin-top: 90px;
+}
+
+details {
+	padding-bottom: 10px;
+	width: 240px;
+	border-bottom: 1px solid var(--light-grayish-blue);
+	margin-bottom: 10px;
+}
+
+details summary {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.7rem;
+	color: var(--very-dark-desaturated-blue);
+	cursor: pointer;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+details summary:hover {
+	color: var(--soft-red);
+}
+
+details[open] summary {
+	font-weight: 700;
+	color: black;
+}
+
+details[open] .icon {
+	transform: rotate(180deg);
+}
+
+details p {
+	font-size: 0.7rem;
+	padding-block: 5px;
+	padding-right: 16px;
+	color: var(--dark-grayish-blue);
+}
+
+.box-icon {
+	display: none;
+}
+
+.bg-desktop {
+	display: none;
+}
+
+.bg-mobile {
+	position: absolute;
+	top: -5px;
+	left: 27px;
+	width: 80%;
+}
+
+@media (min-width: 1440px) {
+	.card-container {
+		width: 700px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		overflow: hidden;
+	}
+
+	.card-container h1 {
+		margin-top: 0;
+	}
+
+	.card-content {
+		align-items: flex-start;
+	}
+
+	.img-container picture,
+	.img-container img {
+		width: 50%;
+		top: 50%;
+		left: -5%;
+		transform: translateY(-50%);
+	}
+
+	.box-icon {
+		display: initial;
+		position: absolute;
+		top: 300px;
+		left: 320px;
+	}
+
+	.bg-desktop {
+		display: initial;
+		position: absolute;
+		width: 100%;
+		top: -60%;
+		left: -55%;
+	}
+
+	.bg-mobile {
+		display: none;
+	}
+}
